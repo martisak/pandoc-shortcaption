@@ -10,6 +10,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fringilla at ex in 
 
 ![This is a long image caption](img.png "Image Short Caption")
 
+![Long caption with LaTeX\label{ref_a_figure}](img.png "alt image caption"){#fig:mylabel width=100% height=50%}
+
 ## With pandoc-crossref
 
 ![long caption](img.png){#fig:myfig}

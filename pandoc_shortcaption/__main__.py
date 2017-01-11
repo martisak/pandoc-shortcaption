@@ -3,7 +3,7 @@
 from pandocfilters import toJSONFilter, RawInline
 import logging
 FORMAT = "%(asctime)s %(levelname)-8s%(module)-10s %(message)s"
-logging.basicConfig(format=FORMAT, level=logging.DEBUG)
+logging.basicConfig(format=FORMAT, level=logging.ERROR)
 
 # \begin{figure}[htbp]
 # \centering
@@ -19,11 +19,19 @@ def remove_prefix(text, prefix):
 def shortcap(key, value, format, meta):
 
     if key == 'Image' and format == "latex":
-        logging.debug(value)
+        #logging.debug(value)
 
         label = value[0][0]
         src = value[2][0]
         alt = remove_prefix(value[2][1], "fig:")
+        attributes = value[0][2]
+        width = None
+        if isinstance(attributes, list):
+            for attr in attributes:
+                if attr[0].lower() == "width":
+                    width = float(attr[1][:-1])/100
+
+        logging.debug(width)
 
         if (alt != ""):
 
@@ -31,7 +39,12 @@ def shortcap(key, value, format, meta):
 
             raw = r'\begin{figure}[htbp]' + '\n'
             raw += r'\centering' + '\n'
-            raw += '\\includegraphics{{{}}}'.format(src, alt) + '\n'
+            if width is None:
+                raw += '\\includegraphics{{{}}}'.format(src, alt) + '\n'
+            else:
+                raw += '\\includegraphics[width={}\\
+                textwidth]{{{}}}'.format(width, src, alt) + '\n'
+
             raw += '\\caption[{}]{{{}}}'.format(alt, caption)
             if (label != ''):
                 raw += '\label{{{}}}'.format(label)
