@@ -4,7 +4,7 @@
 from setuptools import setup
 
 setup(name='pandoc-shortcaption',
-      version='1.1',
+      version='1.2',
       description='Pandoc Filter that uses the alt-text of an image' +
       'as short caption when converting to LaTeX',
       author='Martin Isaksson',

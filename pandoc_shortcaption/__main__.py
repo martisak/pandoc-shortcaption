@@ -42,8 +42,8 @@ def shortcap(key, value, format, meta):
             if width is None:
                 raw += '\\includegraphics{{{}}}'.format(src, alt) + '\n'
             else:
-                raw += '\\includegraphics[width={}\\
-                textwidth]{{{}}}'.format(width, src, alt) + '\n'
+                raw += '\\includegraphics[width={}\\textwidth]{{{}}}'.format(
+                    width, src, alt) + '\n'
 
             raw += '\\caption[{}]{{{}}}'.format(alt, caption)
             if (label != ''):
