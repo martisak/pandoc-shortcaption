@@ -22,7 +22,7 @@ python setup.py install
 
 Compile with
 ~~~
-pandoc -f markdown -t latex --filter pandoc-shortcaption  test.md
+pandoc -f markdown -t latex --filter pandoc-shortcaption test.md
 ~~~
 
 If you would like to use with [pandoc-crossref](https://github.com/lierdakil/pandoc-crossref), then add that filter afterwards.
@@ -33,7 +33,14 @@ If you would like to use with [pandoc-crossref](https://github.com/lierdakil/pan
 Here is a reference to @fig:myfig2.
 ~~~
 
-and compile with
+You can also add a width in percent (no other units supported as of now).
+
+~~~
+![long caption again](img.png "short caption"){#fig:myfig2 width=60%}
+~~~
+
+
+Compile with
 
 ~~~
 pandoc -f markdown -t latex --filter pandoc-shortcaption --filter pandoc-crossref test.md
