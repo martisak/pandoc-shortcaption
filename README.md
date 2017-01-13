@@ -1,5 +1,7 @@
 # pandoc-shortcaption filter
 
+[![Build Status](https://travis-ci.org/martisak/pandoc-shortcaption.svg?branch=master)](https://travis-ci.org/martisak/pandoc-shortcaption)
+
 `pandoc-shortcaption` is a [pandoc](http://pandoc.org/) filter for adding short captions to images in LaTeX output, i.e. `\caption[Short caption]{Long caption}`.
 
 ## Installation
