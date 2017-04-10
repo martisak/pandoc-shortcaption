@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/martisak/pandoc-shortcaption.svg?branch=master)](https://travis-ci.org/martisak/pandoc-shortcaption) [![PyPI version](https://badge.fury.io/py/pandoc-shortcaption.svg)](https://badge.fury.io/py/pandoc-shortcaption)
 
-`pandoc-shortcaption` is a [pandoc](http://pandoc.org/) filter for adding short captions to images in LaTeX output, i.e. `\caption[Short caption]{Long caption}`.
+`pandoc-shortcaption` is a [pandoc](http://pandoc.org/) filter for adding short captions to images in LaTeX output, i.e. `\caption[Short caption]{Long caption}`. For images, the alternate text is used to generate the short caption, but for tables the first sentence is used.
 
 ## Installation
 
