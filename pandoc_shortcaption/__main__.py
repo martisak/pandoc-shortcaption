@@ -47,7 +47,7 @@ def shortcap(key, value, format, meta):
 
         if (alt != ""):
 
-            caption = " ".join([c['c'] for c in value[1] if c['t'] == "Str"])
+            caption = text(value[1])
 
             raw = r'\begin{figure}[htbp]' + '\n'
             raw += r'\centering' + '\n'
